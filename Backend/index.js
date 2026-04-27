@@ -4,6 +4,7 @@ const userDBConnection = require('./Config/User.Config');
 const userRoutes = require('./Routes/user.routes');
 const productDBconnection = require('./Config/Product.config');
 const productRoutes = require('./Routes/product.routes');
+const addToCartRoute = require('./Routes/addToCart.Route');
 const app = express()
 //========middleware==========
 app.use(express.json())
@@ -12,6 +13,7 @@ app.use('/upload', express.static('upload'));
 //========User router======
 app.use('/user',userRoutes)
 app.use('/product',productRoutes)
+app.use('/addtocart',addToCartRoute)
 //========listion==========
 const port = process.env.PORT
 app.listen(port, async () => {
